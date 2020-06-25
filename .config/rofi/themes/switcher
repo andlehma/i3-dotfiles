@@ -1,0 +1,40 @@
+/*
+            __ _                _ _       _               
+ _ __ ___  / _(_)  _____      _(_) |_ ___| |__   ___ _ __ 
+| '__/ _ \| |_| | / __\ \ /\ / / | __/ __| '_ \ / _ \ '__|
+| | | (_) |  _| | \__ \\ V  V /| | || (__| | | |  __/ |   
+|_|  \___/|_| |_| |___/ \_/\_/ |_|\__\___|_| |_|\___|_|   
+*/
+
+*{
+    background: rgba ( 0, 0, 0, 0% );
+    background-color: @background;
+    color: #fff;
+    font: "SF Pro Text 24";
+}
+
+#window {
+    background-color: rgba (50, 50, 50, 70%);
+    width: 1366;
+    height: 768;
+    padding: 250 200;
+}
+
+#inputbar {
+    children:   [ textbox-prompt-colon,entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        "";
+    margin:     0px 0.2em 0em 0em ;
+    text-color: @normal-foreground;
+}
+
+#element.selected.normal {
+    background-color: rgba (0, 0, 0, 30%);
+}
+
+#element.selected.active {
+    background-color: rgba (0, 0, 0, 30%);
+}
