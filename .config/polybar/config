@@ -1,0 +1,66 @@
+############################################
+##              _       _                 ##
+##  _ __   ___ | |_   _| |__   __ _ _ __  ##
+## | '_ \ / _ \| | | | | '_ \ / _` | '__| ##
+## | |_) | (_) | | |_| | |_) | (_| | |    ##
+## | .__/ \___/|_|\__, |_.__/ \__,_|_|    ##
+## |_|            |___/                   ##
+############################################
+
+[bar/mainbar]
+monitor = "eDP1"
+background = #E52f343f
+foreground = #ffffff
+separator = "|"
+font-0 = SF Pro Text:style=Medium:pixelsize=11;2
+font-1 = Font Awesome 5 Free Solid:style=Regular:size=9;2
+font-2 = Font Awesome 5 Brands:style=Regular:size=13;2
+height = 24
+line-size = 2
+modules-left = i3
+modules-right = cpu memory battery network datetime
+padding = 0
+module-margin = 1.5
+bottom = true
+
+[module/i3]
+type = internal/i3
+label-focused-underline = #FFFFFF
+label-mode-padding = 1
+label-focused = %index%
+label-unfocused = %index%
+label-focused-padding = 1
+label-unfocused-padding = 1
+
+[module/cpu]
+type = internal/cpu
+label = CPU %percentage%%
+
+[module/memory]
+type = internal/memory
+label = RAM %percentage_used%%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP0
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+label-disconnected = "%{A1:kitty -e nmtui:}%{A}"
+label-connected = "%{A1:kitty -e nmtui:} %signal%%%{A}"
+click-left = "pkill polybar"
+
+[module/datetime]
+type = internal/date
+date = %a %b %d  %I:%M %p
